@@ -1,7 +1,8 @@
-# ReactKHI meetup 2020
+# ReactKHI meetup 2020 🎙
 
-### When to use, useRef over useState?
+### When to use, useRef over useState? 🤷‍
 
-##### Table of content
+##### Table of content 📉
 
-1. [Introduction](./01-introduction.md)
+1. [Introduction](./01-introduction.md) 👨
+2. [Expectations](./02-expectations.md) 🚁🔦
