@@ -1,0 +1,86 @@
+import { themes } from 'mdx-deck'
+export const theme = themes.swiss
+
+<Head>
+    <title>Stale closures in depth 🤫</title>
+</Head>
+
+# ReactKHI meetup 2020 🎙
+
+## How to deal with stale closures in depth? 🧐
+---
+
+### Table of contents 📉
+
+0. Resources 📑
+1. Introduction 🙆‍
+2. Expectations 🔦
+3. Stale Closures in action 🧟‍
+4. Scope & Closure
+5. Solution
+6. Takeaways
+
+---
+# Resources 📑
+
+- You can find the slides here ➡️
+  **[bit.ly/reactkhi-slides](http://bit.ly/reactkhi-slides)**
+
+- Stale closures in action 🧟‍: [Example 1][closure-in-action-1]
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+- 💼 [@blacksms][black-sms]
+- 📚 ICS (credit goes to 😷)
+- 🏠 Okara, Punjab
+- 🌐 @iamfotx ([Github][github], [Twitter][twitter], [Linked In][linked-in], [Facebook][facebook], & [Email me][email-me])
+- ❤️ Stackoverflow & Emojis
+
+---
+
+# Expectations 🔦
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😑
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+
+### This talk is all about ✅
+
+- Stale closures in functional components 🥺
+- Scope & Closure in JS (pre-requisites) 👹
+- Solution to stale closures ✔️
+
+---
+
+# Stale Closures in action 🧟‍
+
+References 🔗: [Example 1][closure-in-action-1]
+
+
+
+
+
+[comment]: # (Stale closures in action)
+
+[closure-in-action-1]: https://codesandbox.io/s/stale-closure-problem-xut3g?file=/src/App.js
+
+[comment]: # (Personal Info)
+
+[github]: https://www.github.com/iamfotx
+[twitter]: https://www.twitter.com/iamfotx
+[linked-in]: https://www.linkedin.com/in/iamfotx
+[facebook]: https://www.facebook.com/iamfotx
+[email-me]: mailto://iamfotx@gmail.com
+[black-sms]: https://www.linkedin.com/company/black-sms
+
+[comment]: # (Others)
+
+[functional-vs-class-components]: https://overreacted.io/how-are-function-components-different-from-classes/
