@@ -14,11 +14,12 @@ export const theme = themes.swiss
 
 0. Resources 📑
 1. Introduction 🙆‍
-2. Expectations 🔦
-3. Stale Closures in action 🧟‍
-4. Scope & Closure
-5. Solution
-6. Takeaways
+2. Expectations 👀
+3. Stale closures: Problems 🧟‍
+4. Pre-requisites 🚧
+5. Stale closures: Solutions
+6. Recap
+7. Takeaways
 
 ---
 # Resources 📑
@@ -26,7 +27,68 @@ export const theme = themes.swiss
 - You can find the slides here ➡️
   **[bit.ly/reactkhi-slides](http://bit.ly/reactkhi-slides)**
 
-- Stale closures in action 🧟‍: [Example 1][closure-in-action-1]
+- Stale closures: Problems 🧟‍; [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
+- Stale closures: Solutions 😋; [Solution 1][stale-closures-solution-1], [Solution 2][stale-closures-solution-2]
+
+---
+
+# Introduction 🙆‍
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+- 💼 [@blacksms][black-sms]
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+- 💼 [@blacksms][black-sms]
+- 📚 ICS (credit goes to 😷)
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+- 💼 [@blacksms][black-sms]
+- 📚 ICS (credit goes to 😷)
+- 🏠 Okara, Punjab
+
+---
+
+# Introduction 🙆‍
+
+This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a **_JavaScriptuer_** 🥴.
+
+- 🏭 ~7 years (since 2013)
+- 💼 [@blacksms][black-sms]
+- 📚 ICS (credit goes to 😷)
+- 🏠 Okara, Punjab
+- 🌐 @iamfotx ([Github][github], [Twitter][twitter], [Linked In][linked-in], [Facebook][facebook], & [Email me][email-me])
 
 ---
 
@@ -43,34 +105,85 @@ This is Ahmad 👨‍💻, a full-stack JS engineer 🛠. You can also call me a
 
 ---
 
-# Expectations 🔦
+# Expectations 👀
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+---
+
+# Expectations 👀
 
 Let's set some expectations, so you know what to expect from this talk 🤨.
 
 ### This talk is not about 🚫
 
-- Class components at all 😑
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
 - Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
 
 ### This talk is all about ✅
 
-- Stale closures in functional components 🥺
-- Scope & Closure in JS (pre-requisites) 👹
+- Stale closures in functional components 🙃
+- Pre-requisites 🚧
+    - Scope & Closure in JS 😈
+    - useState & useRef hooks 🥂
 - Solution to stale closures ✔️
 
 ---
 
-# Stale Closures in action 🧟‍
+# Stale closures: Problems 🧟‍
 
-References 🔗: [Example 1][closure-in-action-1]
+References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+
+---
+
+# Stale closures: Problems 🧟‍
+
+References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+
+### What does the term "stale closure" mean?
+
+---
+# Stale closures: Problems 🧟‍
+
+References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+
+### What does the term "stale closure" mean?
 
 
+- Stale means **outdated**.
+- So, stale closure is when a closure gets outdated 🤧!
+
+---
+
+
+- Closure is when a function somehow **remembers its outer scope(s)** during execution, even if it was called from a totally different place from where it born 🤯.
 
 
 
 [comment]: # (Stale closures in action)
 
-[closure-in-action-1]: https://codesandbox.io/s/stale-closure-problem-xut3g?file=/src/App.js
+[stale-closures-1]: https://codesandbox.io/s/stale-closures-1-xut3g
+[stale-closures-2]: https://codesandbox.io/s/stale-closures-2-culy8
+
+[comment]: # (Stale closures solution)
+
+[stale-closures-solution-1]: https://codesandbox.io/s/stale-closures-solution-1-1dpeo
+[stale-closures-solution-2]: https://codesandbox.io/s/stale-closures-solution-2-plsrb
 
 [comment]: # (Personal Info)
 
