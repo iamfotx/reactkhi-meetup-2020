@@ -2,12 +2,12 @@ import { themes } from 'mdx-deck'
 export const theme = themes.swiss
 
 <Head>
-    <title>Stale closures in depth 🤫</title>
+    <title>Stale closures in-depth 🤫</title>
 </Head>
 
 # ReactKHI meetup 2020 🎙
 
-## How to deal with stale closures in depth? 🧐
+## How to deal with stale closures in-depth? 🧐
 ---
 
 ### Table of contents 📉
@@ -15,20 +15,26 @@ export const theme = themes.swiss
 0. Resources 📑
 1. Introduction 🙆‍
 2. Expectations 👀
-3. Stale closures: Problems 🧟‍
+3. Understand the Problem 🧟‍
 4. Pre-requisites 🚧
-5. Stale closures: Solutions
-6. Recap
-7. Takeaways
+5. Solutions 😋
+6. Recap 🤠
+7. Takeaways 💸
 
 ---
 # Resources 📑
 
 - You can find the slides here ➡️
-  **[bit.ly/reactkhi-slides](http://bit.ly/reactkhi-slides)**
+  **[bit.ly/stale-closures](http://bit.ly/stale-closures)**
 
-- Stale closures: Problems 🧟‍; [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
-- Stale closures: Solutions 😋; [Solution 1][stale-closures-solution-1], [Solution 2][stale-closures-solution-2]
+- Understanding the Problem 🧟‍:
+    - Source codes 💰: [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
+- Scope 👀 & Closure 😈:
+    - Source codes 💰: [Scope examples][scope-example-1], [Closure examples][closure-example]
+- useState 📦 & useRef 🤝 Hooks:
+    - Source codes 💰: [useState example][use-state-hook], [useRef example][use-ref-hook]
+- Solutions 😋:
+    - Source codes 💰: [Solution 1][stale-closures-solution-1], [Solution 2][stale-closures-solution-2]
 
 ---
 
@@ -121,6 +127,26 @@ Let's set some expectations, so you know what to expect from this talk 🤨.
 
 ### This talk is not about 🚫
 
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
 - Class components at all 😬
 - Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
 
@@ -134,46 +160,669 @@ Let's set some expectations, so you know what to expect from this talk 🤨.
 
 - Class components at all 😬
 - Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
 
 ### This talk is all about ✅
 
-- Stale closures in functional components 🙃
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+### This talk is all about ✅
+
+- Understanding the Problem 🧟‍
+
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+### This talk is all about ✅
+
+- Understanding the Problem 🧟‍
 - Pre-requisites 🚧
-    - Scope & Closure in JS 😈
-    - useState & useRef hooks 🥂
-- Solution to stale closures ✔️
+
 
 ---
 
-# Stale closures: Problems 🧟‍
+# Expectations 👀
 
-References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+### This talk is all about ✅
+
+- Understanding the Problem 🧟‍
+- Pre-requisites 🚧
+    - Scope 👁 & Closure 😈
+
 
 ---
 
-# Stale closures: Problems 🧟‍
+# Expectations 👀
 
-References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+### This talk is all about ✅
+
+- Understanding the Problem 🧟‍
+- Pre-requisites 🚧
+    - Scope 👁 & Closure 😈
+    - useState 📦 & useRef 🤝 Hooks
+
+---
+
+# Expectations 👀
+
+Let's set some expectations, so you know what to expect from this talk 🤨.
+
+### This talk is not about 🚫
+
+- Class components at all 😬
+- Why stale closures don't exist in class components? 🤐 (if you want to deep dive, read [this][functional-vs-class-components])
+- Under the hood implementation of hooks
+
+### This talk is all about ✅
+
+- Understanding the Problem 🧟‍
+- Pre-requisites 🚧
+    - Scope 👁 & Closure 😈
+    - useState 📦 & useRef 🤝 Hooks
+- Solutions 😋
+
+---
+
+# Understand the Problem 🧟‍
+
+
+---
+
+# Understand the Problem 🧟‍
+
+Source codes 💰: [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
+
+---
+
+# Understand the Problem 🧟‍
+
+Source codes 💰: [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
 
 ### What does the term "stale closure" mean?
 
 ---
-# Stale closures: Problems 🧟‍
+# Understand the Problem 🧟‍
 
-References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
+Source codes 💰: [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
 
 ### What does the term "stale closure" mean?
 
 
 - Stale means **outdated**.
-- So, stale closure is when a closure gets outdated 🤧!
+
 
 ---
+# Understand the Problem 🧟‍
+
+Source codes 💰: [Problem 1][stale-closures-1], [Problem 2][stale-closures-2]
+
+### What does the term "stale closure" mean?
 
 
-- Closure is when a function somehow **remembers its outer scope(s)** during execution, even if it was called from a totally different place from where it born 🤯.
+- Stale means **outdated**.
+- So, stale closure is when a closure gets outdated 🤧.
+
+---
+# Pre-requisites 🚧
 
 
+---
+# Pre-requisites 🚧
+
+Lets deep-dive into all of these pieces individually.
+
+
+---
+# Pre-requisites 🚧
+
+Lets deep-dive into all of these pieces individually.
+
+- Scope 👁
+
+---
+# Pre-requisites 🚧
+
+Lets deep-dive into all of these pieces individually.
+
+- Scope 👁
+- Closure 😈
+
+---
+# Pre-requisites 🚧
+
+Lets deep-dive into all of these pieces individually.
+
+- Scope 👁
+- Closure 😈
+- useState Hook 📦
+
+---
+# Pre-requisites 🚧
+
+Lets deep-dive into all of these pieces individually.
+
+- Scope 👁
+- Closure 😈
+- useState Hook 📦
+- useRef Hook 🤝
+
+---
+# Scope 👁
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+- It looks for things in variable environments, V.E (in simple words, local memory).
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+- It looks for things in variable environments, V.E (in simple words, local memory).
+- These are the ~~two~~ ways, how a V.E gets created (fns, & blocks).
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+- It looks for things in variable environments, V.E (in simple words, local memory).
+- These are the ~~two~~ ways, how a V.E gets created (fns, & blocks).
+    - With that being said, it means a V.E is being created when:
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+- It looks for things in variable environments, V.E (in simple words, local memory).
+- These are the ~~two~~ ways, how a V.E gets created (fns, & blocks).
+    - With that being said, it means a V.E is being created when:
+        - A function gets declared (We'll stick with fns for now).
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+### What does the term "scope" mean?
+
+- Scope is mechanism to look for things (things 🤨).
+    - By things, I mean the identifiers.
+
+### Where does it look for things?
+
+- It looks for things in variable environments, V.E (in simple words, local memory).
+- These are the ~~two~~ ways, how a V.E gets created (fns, & blocks).
+    - With that being said, it means a V.E is being created when:
+        - A function gets declared (We'll stick with fns for now).
+        - A block gets created.
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+Resources 📑: [Image 1][scope-image-1], [Image 2][scope-image-2]
+
+### What happens, when a function gets defined & executed?
+
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+Resources 📑: [Image 1][scope-image-1], [Image 2][scope-image-2]
+
+### What happens, when a function gets defined & executed?
+
+- When you define a fn, it comes with a V.E, where it stores all the variables during execution.
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+Resources 📑: [Image 1][scope-image-1], [Image 2][scope-image-2]
+
+### What happens, when a function gets defined & executed?
+
+- When you define a fn, it comes with a V.E, where it stores all the variables during execution.
+    - It automatically garbage-collects all those variables after execution.
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 1][scope-example-1]
+
+Resources 📑: [Image 1][scope-image-1], [Image 2][scope-image-2]
+
+### What happens, when a function gets defined & executed?
+
+- When you define a fn, it comes with a V.E, where it stores all the variables during execution.
+    - It automatically garbage-collects all those variables after execution.
+
+<img src="http://localhost:8081/fn-execution.jpeg" style={{ height: 450}} />
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 2][scope-example-2]
+
+### okay, okay! What does the term "lexical" mean in lexical scoping then 🥺?
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 2][scope-example-2]
+
+### okay, okay! What does the term "lexical" mean in lexical scoping then 🥺?
+
+- We know scope is just a mechanism to look for things, with that in mind:
+
+---
+# Scope 👁
+
+Source codes 💰: [Example 2][scope-example-2]
+
+### okay, okay! What does the term "lexical" mean in lexical scoping then 🥺?
+
+- We know scope is just a mechanism to look for things, with that in mind:
+    - lexical scoping is just an extended version of that mechanism to deal with nested V.Es
+
+---
+# Closure 😈
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+Okay so now, we understand lexical scoping. Lets deep-dive into closure.
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+Okay so now, we understand lexical scoping. Lets deep-dive into closure.
+
+### What is closure 😈?
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+Okay so now, we understand lexical scoping. Lets deep-dive into closure.
+
+### What is closure 😈?
+
+- Closure is when a function somehow **remembers its outer V.E** during execution, even if it was called from a totally different place from where it was born 🤯.
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+Okay so now, we understand lexical scoping. Lets deep-dive into closure.
+
+### What is closure 😈?
+
+- Closure is when a function somehow **remembers its outer V.E** during execution, even if it was called from a totally different place from where it was born 🤯.
+    - By remember I mean, it ~~captures~~ creates a live link.
+
+---
+# Closure 😈
+
+Source codes 💰: [Examples][closure-example]
+
+Okay so now, we understand lexical scoping. Lets deep-dive into closure.
+
+### What is closure 😈?
+
+- Closure is when a function somehow **remembers its outer V.E** during execution, even if it was called from a totally different place from where it was born 🤯.
+    - By remember I mean, it ~~captures~~ creates a live link.
+- In simple words, it extends its own V.E.
+
+---
+# useState Hook 📦
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+### How do you define useState hook?
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+### How do you define useState hook?
+- ~~useState hook lets you add state to your functional components~~
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+### How do you define useState hook?
+- ~~useState hook lets you add state to your functional components~~
+- I.M.O, useState is an API that lets you do the following in functional components:
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+### How do you define useState hook?
+- ~~useState hook lets you add state to your functional components~~
+- I.M.O, useState is an API that lets you do the following in functional components:
+    - Persist a value across each render.
+
+---
+# useState Hook 📦
+
+Source codes 💰: [Example][use-state-hook]
+
+### How do you define useState hook?
+- ~~useState hook lets you add state to your functional components~~
+- I.M.O, useState is an API that lets you do the following in functional components:
+    - Persist a value across each render.
+    - Triggers re-render when you update that persisted value.
+---
+# useRef Hook 🤝
+
+---
+# useRef Hook 🤝
+
+Source codes 💰: [Example][use-ref-hook]
+
+---
+# useRef Hook 🤝
+
+Source codes 💰: [Example][use-ref-hook]
+
+### How do you define useRef hook?
+
+---
+# useRef Hook 🤝
+
+Source codes 💰: [Example][use-ref-hook]
+
+### How do you define useRef hook?
+
+- useRef hook is an API somewhat similar to useState that does the followings:
+
+
+---
+# useRef Hook 🤝
+
+Source codes 💰: [Example][use-ref-hook]
+
+### How do you define useRef hook?
+
+- useRef hook is an API somewhat similar to useState that does the followings:
+    - It returns a single mutable object that persists across each render.
+
+---
+# useRef Hook 🤝
+
+Source codes 💰: [Example][use-ref-hook]
+
+### How do you define useRef hook?
+
+- useRef hook is an API somewhat similar to useState that does the followings:
+    - It returns a single mutable object that persists across each render.
+    - Unlike useState, it doesn't re-render on mutating the persisted object.
+
+---
+# Solutions 😋
+
+---
+# Solutions 😋
+
+Source codes 💰: [Solution 1][stale-closures-solution-1], [Solution 2][stale-closures-solution-2]
+
+
+---
+# Solutions 😋
+
+Source codes 💰: [Solution 1][stale-closures-solution-1], [Solution 2][stale-closures-solution-2]
+
+<img src="http://localhost:8081/playing-computer.gif" style={{ height: 500}}/>
+
+---
+# Recap 🤠
+
+---
+# Recap 🤠
+
+### What's the right tool when you need a persistent value across each render to show UI changes?
+
+---
+# Recap 🤠
+
+### What's the right tool when you need a persistent value across each render to show UI changes?
+
+<img src="http://localhost:8081/use-state.png" style={{ height: 500}}/>
+
+---
+# Recap 🤠
+
+### What's the right tool when you need a persistent value across each render regardless of UI changes?
+
+
+---
+# Recap 🤠
+
+### What's the right tool when you need a persistent value across each render regardless of UI changes?
+
+<img src="http://localhost:8081/use-ref.png" style={{ height: 500}}/>
+
+---
+# Takeaways 💸
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+### for juniors
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+### for juniors
+
+- When reaching out to a Sr. for help:
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+### for juniors
+
+- When reaching out to a Sr. for help:
+    - Tell them the problem & the end product you're looking for.
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+### for juniors
+
+- When reaching out to a Sr. for help:
+    - Tell them the problem & the end product you're looking for.
+    - Also tell them about X, Y, & Z solutions you've tried so far.
+
+---
+# Takeaways 💸
+
+- Ask *why* not only when it didn't work but also when it worked.
+- Treat your juniors well, and help them as much as possible.
+
+### for juniors
+
+- When reaching out to a Sr. for help:
+    - Tell them the problem & the end product you're looking for.
+    - Also tell them about X, Y, & Z solutions you've tried so far.
+
+### Thank you all 🙂
 
 [comment]: # (Stale closures in action)
 
@@ -194,6 +843,28 @@ References 🔗: [Example 1][stale-closures-1], [Example 2][stale-closures-2]
 [email-me]: mailto://iamfotx@gmail.com
 [black-sms]: https://www.linkedin.com/company/black-sms
 
+
+[comment]: # (Scope)
+
+[scope-example-1]: https://codesandbox.io/s/scope-examples-fmw9z?file=/src/example-0.js
+[scope-example-2]: https://codesandbox.io/s/scope-examples-fmw9z?file=/src/example-1.js
+
+[scope-image-1]: https://drive.google.com/file/d/1K30am-JVcNtgNrsLoM-Ze_3_Ad4ykgCh/view?usp=sharing
+[scope-image-2]: https://drive.google.com/file/d/1IfXGmO5_wv0RPVO36mCiO8SS3Bap752V/view?usp=sharing
+
+[comment]: # (Closure)
+
+[closure-example]: https://codesandbox.io/s/closure-examples-jfn6h?file=/src/example-0.js
+
+[comment]: # (useState hook)
+
+[use-state-hook]: https://codesandbox.io/s/use-state-hook-x31gu?file=/src/App.js
+
+[comment]: # (useRef hook)
+
+[use-ref-hook]: https://codesandbox.io/s/use-ref-hook-bjgn5?file=/src/App.js
+
 [comment]: # (Others)
 
 [functional-vs-class-components]: https://overreacted.io/how-are-function-components-different-from-classes/
+

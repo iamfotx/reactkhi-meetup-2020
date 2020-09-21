@@ -6,9 +6,12 @@
   "author": "iamfotx <iamfotx@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "mdx-deck": "^4.1.1"
   },
   "scripts": {
-    "start": "mdx-deck ./slides.mdx"
+    "start": "concurrently \"npm:mdx\" \"npm:static\"",
+    "mdx": "mdx-deck slides.mdx",
+    "static": "cd static && python -m SimpleHTTPServer 8081"
   }
 }
